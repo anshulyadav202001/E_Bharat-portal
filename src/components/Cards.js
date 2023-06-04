@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import Sector from './Sector.js';
 import './card.css'
+import Schem from './Schem.js';
 
 const Cards = () => {
   return (
@@ -43,7 +44,24 @@ const Cards = () => {
       ))}
     </Row>
     </div>
-
+    <div className='scheme p-1'>
+    <h3 className='p-3'>scheme</h3>
+    <Row className="card-row p-5 w-100">
+      {Schem.map((card,index) => (
+        <Col sm={12} md={4} className='mb-4'  key={index}>
+          <Card className="card" border="light" style={{ background: 'none',border:"none" }}>
+            <Card.Body>
+              <div className="icon">
+                <FontAwesomeIcon icon={card.icon} />
+              </div>
+              <Card.Title>{card.heading}</Card.Title>
+              <Card.Text>{card.content}</Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+      ))}
+    </Row>
+    </div>
     </div>
   )
 }
